@@ -144,7 +144,7 @@ void CDgnMathFunc::mathMxIdentity(mf_matrix m)
 		0.0, 0.0, 1.0, 0.0,
 		0.0, 0.0, 0.0, 1.0
 	};
-	//memcpy(m, mtemp, sizeof(mtemp));
+	memcpy(m, mtemp, sizeof(mf_matrix));
 }
 
 void CDgnMathFunc::mathMxMult(mf_matrix m1, mf_matrix m2, mf_matrix mout)
@@ -162,12 +162,14 @@ void CDgnMathFunc::mathMxMult(mf_matrix m1, mf_matrix m2, mf_matrix mout)
 			}
 		}
 	}
-	//memcpy(mout, m, sizeof(m));
+	memcpy(mout, m, sizeof(mf_matrix));
 }
 
 void CDgnMathFunc::mathMxCopy(mf_matrix min, mf_matrix mout)
 {
-	//memcpy(mout, min, sizeof(mout));
+	memcpy(mout, min, sizeof(mf_matrix));
+
+	return;
 }
 
 void CDgnMathFunc::mathVecMult(mf_vector v, mf_matrix m, mf_vector vout)
@@ -200,7 +202,7 @@ void CDgnMathFunc::mathVecCross(mf_vector v1, mf_vector v2, mf_vector vout)
 	vtemp[1] = v1[2] * v2[0] - v1[0] * v2[2];
 	vtemp[2] = v1[0] * v2[1] - v1[1] * v2[0];
 	vtemp[3] = 1.0;
-	//memcpy(vout, vtemp, sizeof(vout));
+	memcpy(vout, vtemp, sizeof(mf_vector));
 }
 
 void CDgnMathFunc::mathRotateX(double angle, double& rx, double& ry, double& rz)
