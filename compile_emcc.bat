@@ -1,0 +1,1 @@
+emcc memory.cpp MathFunc.cpp -o memory.js

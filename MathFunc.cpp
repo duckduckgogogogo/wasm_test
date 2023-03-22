@@ -144,7 +144,7 @@ void CDgnMathFunc::mathMxIdentity(mf_matrix m)
 		0.0, 0.0, 1.0, 0.0,
 		0.0, 0.0, 0.0, 1.0
 	};
-	memcpy(m, mtemp, sizeof(mtemp));
+	//memcpy(m, mtemp, sizeof(mtemp));
 }
 
 void CDgnMathFunc::mathMxMult(mf_matrix m1, mf_matrix m2, mf_matrix mout)
@@ -162,12 +162,12 @@ void CDgnMathFunc::mathMxMult(mf_matrix m1, mf_matrix m2, mf_matrix mout)
 			}
 		}
 	}
-	memcpy(mout, m, sizeof(m));
+	//memcpy(mout, m, sizeof(m));
 }
 
 void CDgnMathFunc::mathMxCopy(mf_matrix min, mf_matrix mout)
 {
-	memcpy(mout, min, sizeof(mout));
+	//memcpy(mout, min, sizeof(mout));
 }
 
 void CDgnMathFunc::mathVecMult(mf_vector v, mf_matrix m, mf_vector vout)
@@ -200,7 +200,7 @@ void CDgnMathFunc::mathVecCross(mf_vector v1, mf_vector v2, mf_vector vout)
 	vtemp[1] = v1[2] * v2[0] - v1[0] * v2[2];
 	vtemp[2] = v1[0] * v2[1] - v1[1] * v2[0];
 	vtemp[3] = 1.0;
-	memcpy(vout, vtemp, sizeof(vout));
+	//memcpy(vout, vtemp, sizeof(vout));
 }
 
 void CDgnMathFunc::mathRotateX(double angle, double& rx, double& ry, double& rz)
@@ -1817,7 +1817,7 @@ bool CDgnMathFunc::project_on_plane_vector(const double node_xyz[3], const doubl
 	double b = vector13[0] * vector12[2] - vector12[0] * vector13[2];
 	double c = vector12[0] * vector13[1] - vector13[0] * vector12[1];
 	double plane_norm = sqrt(pow(a, 2.0) + pow(b, 2.0) + pow(c, 2.0));
-	if ( (plane_norm == 0.0) ) return false; // not plane
+	//if ( (plane_norm == 0.0) ) return false; // not plane
 
 	a /= plane_norm;
 	b /= plane_norm;
@@ -2996,7 +2996,7 @@ int CDgnMathFunc::GetRotationType(const int nData, double polyLine[][2])
 		nRotType = 2;
 	}
 
-	if ( nRotType == 0 );
+	//if ( nRotType == 0 );
 
 	return nRotType;
 }
@@ -3361,7 +3361,7 @@ double CDgnMathFunc::mathAbs(double x)
 
 int CDgnMathFunc::RealToInt(const double dVal, double dTol)
 {
-	if ( dTol <= 0 );
+	//if ( dTol <= 0 );
 
 	int nInt = ( int ) dVal;
 	if ( fabs(dVal - nInt - 1) < dTol )
@@ -3721,7 +3721,7 @@ inline CVector3 CVector3::operator* (double fScalar) const
 
 inline CVector3 CVector3::operator/ (double fScalar) const
 {
-	if ( fabs(fScalar) < CDgnMathFunc::Get_NormalZero() );
+	//if ( fabs(fScalar) < CDgnMathFunc::Get_NormalZero() );
 	return CVector3(x/fScalar, y/fScalar, z/fScalar);
 }
 
@@ -3732,9 +3732,9 @@ inline CVector3 CVector3::operator* (const CVector3& rVector) const
 
 inline CVector3 CVector3::operator/ (const CVector3& rVector) const
 {
-	if ( fabs(rVector.x) < CDgnMathFunc::Get_NormalZero() );
-	if ( fabs(rVector.y) < CDgnMathFunc::Get_NormalZero() );
-	if ( fabs(rVector.z) < CDgnMathFunc::Get_NormalZero() );
+	//if ( fabs(rVector.x) < CDgnMathFunc::Get_NormalZero() );
+	//if ( fabs(rVector.y) < CDgnMathFunc::Get_NormalZero() );
+	//if ( fabs(rVector.z) < CDgnMathFunc::Get_NormalZero() );
 	return CVector3(x / rVector.x, y / rVector.y, z / rVector.z);
 }
 
@@ -3769,7 +3769,7 @@ inline CVector3& CVector3::operator*= (double fScalar)
 
 inline CVector3& CVector3::operator/= (double fScalar)
 {
-	if ( fabs(fScalar) < CDgnMathFunc::Get_NormalZero() );
+	//if ( fabs(fScalar) < CDgnMathFunc::Get_NormalZero() );
 	x /= fScalar;
 	y /= fScalar;
 	z /= fScalar;
@@ -3786,9 +3786,9 @@ inline CVector3& CVector3::operator*= (const CVector3& rVector)
 
 inline CVector3& CVector3::operator/= (const CVector3& rVector)
 {
-	if ( fabs(rVector.x) < CDgnMathFunc::Get_NormalZero() );
-	if ( fabs(rVector.y) < CDgnMathFunc::Get_NormalZero() );
-	if ( fabs(rVector.z) < CDgnMathFunc::Get_NormalZero() );
+	//if ( fabs(rVector.x) < CDgnMathFunc::Get_NormalZero() );
+	//if ( fabs(rVector.y) < CDgnMathFunc::Get_NormalZero() );
+	//if ( fabs(rVector.z) < CDgnMathFunc::Get_NormalZero() );
 	x /= rVector.x;
 	y /= rVector.y;
 	z /= rVector.z;
